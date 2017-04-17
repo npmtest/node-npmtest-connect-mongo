@@ -1,7 +1,7 @@
 # test coverage for  [connect-mongo (v1.3.2)](https://github.com/kcbanner/connect-mongo#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-connect-mongo.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-mongo) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-mongo.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-mongo)
 #### MongoDB session store for Express and Connect
 
-[![NPM](https://nodei.co/npm/connect-mongo.png?downloads=true)](https://www.npmjs.com/package/connect-mongo)
+[![NPM](https://nodei.co/npm/connect-mongo.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/connect-mongo)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-connect-mongo/tree/alpha)|
 |--:|:--|
@@ -9,11 +9,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-connect-mongo/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-connect-mongo/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-connect-mongo/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-connect-mongo/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-connect-mongo/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-connect-mongo/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-connect-mongo/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-connect-mongo%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-connect-mongo/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-connect-mongo/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-mongo/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-connect-mongo%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-mongo/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.html](https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-connect-mongo/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-connect-mongo/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-connect-mongo/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-connect-mongo/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-mongo/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-mongo/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-connect-mongo/build/screenCapture.npmPackageListing.svg)
 
@@ -31,12 +37,10 @@
     },
     "contributors": [
         {
-            "name": "Casey Banner",
-            "email": "kcbanner@gmail.com"
+            "name": "Casey Banner"
         },
         {
-            "name": "Jerome Desboeufs",
-            "email": "jerome.desboeufs@gmail.com"
+            "name": "Jerome Desboeufs"
         }
     ],
     "dependencies": {
@@ -76,17 +80,14 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "kcbanner",
-            "email": "kcbanner@gmail.com"
+            "name": "kcbanner"
         },
         {
-            "name": "jdesboeufs",
-            "email": "jerome.desboeufs@gmail.com"
+            "name": "jdesboeufs"
         }
     ],
     "name": "connect-mongo",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kcbanner/connect-mongo.git"

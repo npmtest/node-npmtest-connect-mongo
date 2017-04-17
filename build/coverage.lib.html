@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-connect-mongo/connect-mongo/src/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-connect-mongo/node_modules/connect-mongo/src/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-connect-mongo">npmtest-connect-mongo (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-connect-mongo/connect-mongo/src/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-connect-mongo/node_modules/connect-mongo/src/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">3.47% <small>(5 / 144)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-connect-mongo/connect-mongo/src/</a> » index.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-connect-mongo/node_modules/connect-mongo/src/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -874,195 +876,195 @@
 const Promise = require('bluebird');
 const MongoClient = require('mongodb');
 &nbsp;
-<span class="fstat-no" title="function not covered">function defaultSerializeFunction(session) {</span>
+<span class="fstat-no" title="function not covered" >function defaultSerializeFunction(session) {</span>
     // Copy each property of the session to a new object
-<span class="cstat-no" title="statement not covered">    const obj = {};</span>
-<span class="cstat-no" title="statement not covered">    let prop;</span>
+<span class="cstat-no" title="statement not covered" >    const obj = {};</span>
+<span class="cstat-no" title="statement not covered" >    let prop;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for (prop in session) {</span>
-<span class="cstat-no" title="statement not covered">        if (prop === 'cookie') {</span>
+<span class="cstat-no" title="statement not covered" >    for (prop in session) {</span>
+<span class="cstat-no" title="statement not covered" >        if (prop === 'cookie') {</span>
             // Convert the cookie instance to an object, if possible
             // This gets rid of the duplicate object under session.cookie.data property
-<span class="cstat-no" title="statement not covered">            obj.cookie = session.cookie.toJSON ? session.cookie.toJSON() : session.cookie;</span>
+<span class="cstat-no" title="statement not covered" >            obj.cookie = session.cookie.toJSON ? session.cookie.toJSON() : session.cookie;</span>
         } else {
-<span class="cstat-no" title="statement not covered">            obj[prop] = session[prop];</span>
+<span class="cstat-no" title="statement not covered" >            obj[prop] = session[prop];</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return obj;</span>
+<span class="cstat-no" title="statement not covered" >    return obj;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function computeTransformFunctions(options, defaultStringify) {</span>
-<span class="cstat-no" title="statement not covered">    if (options.serialize || options.unserialize) {</span>
-<span class="cstat-no" title="statement not covered">        return {</span>
+<span class="fstat-no" title="function not covered" >function computeTransformFunctions(options, defaultStringify) {</span>
+<span class="cstat-no" title="statement not covered" >    if (options.serialize || options.unserialize) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
             serialize: options.serialize || defaultSerializeFunction,
-            unserialize: options.unserialize || (x =&gt; <span class="cstat-no" title="statement not covered">x)</span>,
+            unserialize: options.unserialize || (x =&gt; <span class="cstat-no" title="statement not covered" >x)</span>,
         };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (options.stringify === false || defaultStringify === false) {</span>
-<span class="cstat-no" title="statement not covered">        return {</span>
+<span class="cstat-no" title="statement not covered" >    if (options.stringify === false || defaultStringify === false) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
             serialize: defaultSerializeFunction,
-            unserialize: x =&gt; <span class="cstat-no" title="statement not covered">x,</span>
+            unserialize: x =&gt; <span class="cstat-no" title="statement not covered" >x,</span>
         };
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (options.stringify === true || defaultStringify === true) {</span>
-<span class="cstat-no" title="statement not covered">        return {</span>
+<span class="cstat-no" title="statement not covered" >    if (options.stringify === true || defaultStringify === true) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
             serialize: JSON.stringify,
             unserialize: JSON.parse,
         };
     }
 }
 &nbsp;
-module.exports = <span class="fstat-no" title="function not covered">function connectMongo(connect) {</span>
-<span class="cstat-no" title="statement not covered">    const Store = connect.Store || connect.session.Store;</span>
-<span class="cstat-no" title="statement not covered">    const MemoryStore = connect.MemoryStore || connect.session.MemoryStore;</span>
+module.exports = <span class="fstat-no" title="function not covered" >function connectMongo(connect) {</span>
+<span class="cstat-no" title="statement not covered" >    const Store = connect.Store || connect.session.Store;</span>
+<span class="cstat-no" title="statement not covered" >    const MemoryStore = connect.MemoryStore || connect.session.MemoryStore;</span>
 &nbsp;
     class MongoStore extends Store {
 &nbsp;
-        constructor<span class="fstat-no" title="function not covered">(options) {</span>
-<span class="cstat-no" title="statement not covered">            options = options || {};</span>
+        constructor<span class="fstat-no" title="function not covered" >(options) {</span>
+<span class="cstat-no" title="statement not covered" >            options = options || {};</span>
 &nbsp;
             /* Fallback */
-<span class="cstat-no" title="statement not covered">            if (options.fallbackMemory &amp;&amp; MemoryStore) {</span>
-<span class="cstat-no" title="statement not covered">                return new MemoryStore();</span>
+<span class="cstat-no" title="statement not covered" >            if (options.fallbackMemory &amp;&amp; MemoryStore) {</span>
+<span class="cstat-no" title="statement not covered" >                return new MemoryStore();</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            super(options);</span>
+<span class="cstat-no" title="statement not covered" >            super(options);</span>
 &nbsp;
             /* Options */
-<span class="cstat-no" title="statement not covered">            this.ttl = options.ttl || 1209600; </span>// 14 days
-<span class="cstat-no" title="statement not covered">            this.collectionName = options.collection || 'sessions';</span>
-<span class="cstat-no" title="statement not covered">            this.autoRemove = options.autoRemove || 'native';</span>
-<span class="cstat-no" title="statement not covered">            this.autoRemoveInterval = options.autoRemoveInterval || 10;</span>
-<span class="cstat-no" title="statement not covered">            this.transformFunctions = computeTransformFunctions(options, true);</span>
+<span class="cstat-no" title="statement not covered" >            this.ttl = options.ttl || 1209600; </span>// 14 days
+<span class="cstat-no" title="statement not covered" >            this.collectionName = options.collection || 'sessions';</span>
+<span class="cstat-no" title="statement not covered" >            this.autoRemove = options.autoRemove || 'native';</span>
+<span class="cstat-no" title="statement not covered" >            this.autoRemoveInterval = options.autoRemoveInterval || 10;</span>
+<span class="cstat-no" title="statement not covered" >            this.transformFunctions = computeTransformFunctions(options, true);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            this.options = options;</span>
+<span class="cstat-no" title="statement not covered" >            this.options = options;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            this.changeState('init');</span>
+<span class="cstat-no" title="statement not covered" >            this.changeState('init');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            const newConnectionCallback = (err, db) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                if (err) {</span>
-<span class="cstat-no" title="statement not covered">                    this.connectionFailed(err);</span>
+<span class="cstat-no" title="statement not covered" >            const newConnectionCallback = (err, db) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.connectionFailed(err);</span>
                 } else {
-<span class="cstat-no" title="statement not covered">                    this.handleNewConnectionAsync(db);</span>
+<span class="cstat-no" title="statement not covered" >                    this.handleNewConnectionAsync(db);</span>
                 }
             };
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (options.url) {</span>
+<span class="cstat-no" title="statement not covered" >            if (options.url) {</span>
                 // New native connection using url + mongoOptions
-<span class="cstat-no" title="statement not covered">                MongoClient.connect(options.url, options.mongoOptions || {}, newConnectionCallback);</span>
-            } else <span class="cstat-no" title="statement not covered">if (options.mongooseConnection) {</span>
+<span class="cstat-no" title="statement not covered" >                MongoClient.connect(options.url, options.mongoOptions || {}, newConnectionCallback);</span>
+            } else <span class="cstat-no" title="statement not covered" >if (options.mongooseConnection) {</span>
                 // Re-use existing or upcoming mongoose connection
-<span class="cstat-no" title="statement not covered">                if (options.mongooseConnection.readyState === 1) {</span>
-<span class="cstat-no" title="statement not covered">                    this.handleNewConnectionAsync(options.mongooseConnection.db);</span>
+<span class="cstat-no" title="statement not covered" >                if (options.mongooseConnection.readyState === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.handleNewConnectionAsync(options.mongooseConnection.db);</span>
                 } else {
-<span class="cstat-no" title="statement not covered">                    options.mongooseConnection.once('open', () =&gt; <span class="cstat-no" title="statement not covered">this.handleNewConnectionAsync(options.mongooseConnection.db))</span>;</span>
+<span class="cstat-no" title="statement not covered" >                    options.mongooseConnection.once('open', () =&gt; <span class="cstat-no" title="statement not covered" >this.handleNewConnectionAsync(options.mongooseConnection.db))</span>;</span>
                 }
-            } else <span class="cstat-no" title="statement not covered">if (options.db &amp;&amp; options.db.listCollections) {</span>
+            } else <span class="cstat-no" title="statement not covered" >if (options.db &amp;&amp; options.db.listCollections) {</span>
                 // Re-use existing or upcoming native connection
-<span class="cstat-no" title="statement not covered">                if (options.db.openCalled || options.db.openCalled === undefined) { // openCalled is undefined in mongodb@2.x</span>
-<span class="cstat-no" title="statement not covered">                    this.handleNewConnectionAsync(options.db);</span>
+<span class="cstat-no" title="statement not covered" >                if (options.db.openCalled || options.db.openCalled === undefined) { // openCalled is undefined in mongodb@2.x</span>
+<span class="cstat-no" title="statement not covered" >                    this.handleNewConnectionAsync(options.db);</span>
                 } else {
-<span class="cstat-no" title="statement not covered">                    options.db.open(newConnectionCallback);</span>
+<span class="cstat-no" title="statement not covered" >                    options.db.open(newConnectionCallback);</span>
                 }
-            } else <span class="cstat-no" title="statement not covered">if (options.dbPromise) {</span>
-<span class="cstat-no" title="statement not covered">                options.dbPromise</span>
-                    .then(db =&gt; <span class="cstat-no" title="statement not covered">this.handleNewConnectionAsync(db))</span>
-                    .catch(err =&gt; <span class="cstat-no" title="statement not covered">this.connectionFailed(err))</span>;
+            } else <span class="cstat-no" title="statement not covered" >if (options.dbPromise) {</span>
+<span class="cstat-no" title="statement not covered" >                options.dbPromise</span>
+                    .then(db =&gt; <span class="cstat-no" title="statement not covered" >this.handleNewConnectionAsync(db))</span>
+                    .catch(err =&gt; <span class="cstat-no" title="statement not covered" >this.connectionFailed(err))</span>;
             } else {
-<span class="cstat-no" title="statement not covered">                throw new Error('Connection strategy not found');</span>
+<span class="cstat-no" title="statement not covered" >                throw new Error('Connection strategy not found');</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            this.changeState('connecting');</span>
+<span class="cstat-no" title="statement not covered" >            this.changeState('connecting');</span>
 &nbsp;
         }
 &nbsp;
-        connectionFailed<span class="fstat-no" title="function not covered">(err) {</span>
-<span class="cstat-no" title="statement not covered">            this.changeState('disconnected');</span>
-<span class="cstat-no" title="statement not covered">            throw err;</span>
+        connectionFailed<span class="fstat-no" title="function not covered" >(err) {</span>
+<span class="cstat-no" title="statement not covered" >            this.changeState('disconnected');</span>
+<span class="cstat-no" title="statement not covered" >            throw err;</span>
         }
 &nbsp;
-        handleNewConnectionAsync<span class="fstat-no" title="function not covered">(db) {</span>
-<span class="cstat-no" title="statement not covered">            this.db = db;</span>
-<span class="cstat-no" title="statement not covered">            return this</span>
+        handleNewConnectionAsync<span class="fstat-no" title="function not covered" >(db) {</span>
+<span class="cstat-no" title="statement not covered" >            this.db = db;</span>
+<span class="cstat-no" title="statement not covered" >            return this</span>
                 .setCollection(db.collection(this.collectionName))
                 .setAutoRemoveAsync()
-                    .then(() =&gt; <span class="cstat-no" title="statement not covered">this.changeState('connected'))</span>;
+                    .then(() =&gt; <span class="cstat-no" title="statement not covered" >this.changeState('connected'))</span>;
         }
 &nbsp;
-        setAutoRemoveAsync<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">            let removeQuery = { expires: { $lt: new Date() } };</span>
-<span class="cstat-no" title="statement not covered">            switch (this.autoRemove) {</span>
+        setAutoRemoveAsync<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >            let removeQuery = { expires: { $lt: new Date() } };</span>
+<span class="cstat-no" title="statement not covered" >            switch (this.autoRemove) {</span>
             case 'native':
-<span class="cstat-no" title="statement not covered">                return this.collection.ensureIndexAsync({ expires: 1 }, { expireAfterSeconds: 0 });</span>
+<span class="cstat-no" title="statement not covered" >                return this.collection.ensureIndexAsync({ expires: 1 }, { expireAfterSeconds: 0 });</span>
             case 'interval':
-<span class="cstat-no" title="statement not covered">                this.timer = setInterval(() =&gt; <span class="cstat-no" title="statement not covered">this.collection.remove(removeQuery, { w: 0 }),</span> this.autoRemoveInterval * 1000 * 60);</span>
-<span class="cstat-no" title="statement not covered">                this.timer.unref();</span>
-<span class="cstat-no" title="statement not covered">                return Promise.resolve();</span>
+<span class="cstat-no" title="statement not covered" >                this.timer = setInterval(() =&gt; <span class="cstat-no" title="statement not covered" >this.collection.remove(removeQuery, { w: 0 }),</span> this.autoRemoveInterval * 1000 * 60);</span>
+<span class="cstat-no" title="statement not covered" >                this.timer.unref();</span>
+<span class="cstat-no" title="statement not covered" >                return Promise.resolve();</span>
             default:
-<span class="cstat-no" title="statement not covered">                return Promise.resolve();</span>
+<span class="cstat-no" title="statement not covered" >                return Promise.resolve();</span>
             }
         }
 &nbsp;
-        changeState<span class="fstat-no" title="function not covered">(newState) {</span>
-<span class="cstat-no" title="statement not covered">            if (newState !== this.state) {</span>
-<span class="cstat-no" title="statement not covered">                this.state = newState;</span>
-<span class="cstat-no" title="statement not covered">                this.emit(newState);</span>
+        changeState<span class="fstat-no" title="function not covered" >(newState) {</span>
+<span class="cstat-no" title="statement not covered" >            if (newState !== this.state) {</span>
+<span class="cstat-no" title="statement not covered" >                this.state = newState;</span>
+<span class="cstat-no" title="statement not covered" >                this.emit(newState);</span>
             }
         }
 &nbsp;
-        setCollection<span class="fstat-no" title="function not covered">(collection) {</span>
-<span class="cstat-no" title="statement not covered">            if (this.timer) {</span>
-<span class="cstat-no" title="statement not covered">                clearInterval(this.timer);</span>
+        setCollection<span class="fstat-no" title="function not covered" >(collection) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.timer) {</span>
+<span class="cstat-no" title="statement not covered" >                clearInterval(this.timer);</span>
             }
-<span class="cstat-no" title="statement not covered">            this.collectionReadyPromise = undefined;</span>
-<span class="cstat-no" title="statement not covered">            this.collection = collection;</span>
+<span class="cstat-no" title="statement not covered" >            this.collectionReadyPromise = undefined;</span>
+<span class="cstat-no" title="statement not covered" >            this.collection = collection;</span>
 &nbsp;
             // Promisify used collection methods
-<span class="cstat-no" title="statement not covered">            ['count', 'findOne', 'remove', 'drop', 'ensureIndex'].forEach(method =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                collection[method + 'Async'] = Promise.promisify(collection[method], { context: collection });</span>
+<span class="cstat-no" title="statement not covered" >            ['count', 'findOne', 'remove', 'drop', 'ensureIndex'].forEach(method =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                collection[method + 'Async'] = Promise.promisify(collection[method], { context: collection });</span>
             });
-<span class="cstat-no" title="statement not covered">            collection.updateAsync = Promise.promisify(collection.update, { context: collection, multiArgs: true });</span>
+<span class="cstat-no" title="statement not covered" >            collection.updateAsync = Promise.promisify(collection.update, { context: collection, multiArgs: true });</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this;</span>
+<span class="cstat-no" title="statement not covered" >            return this;</span>
         }
 &nbsp;
-        collectionReady<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">            let promise = this.collectionReadyPromise;</span>
-<span class="cstat-no" title="statement not covered">            if (!promise) {</span>
-<span class="cstat-no" title="statement not covered">                promise = new Promise((resolve, reject) =&gt; {</span>
-<span class="cstat-no" title="statement not covered">                    switch (this.state) {</span>
+        collectionReady<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >            let promise = this.collectionReadyPromise;</span>
+<span class="cstat-no" title="statement not covered" >            if (!promise) {</span>
+<span class="cstat-no" title="statement not covered" >                promise = new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    switch (this.state) {</span>
                     case 'connected':
-<span class="cstat-no" title="statement not covered">                        resolve(this.collection);</span>
-<span class="cstat-no" title="statement not covered">                        break;</span>
+<span class="cstat-no" title="statement not covered" >                        resolve(this.collection);</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
                     case 'connecting':
-<span class="cstat-no" title="statement not covered">                        this.once('connected', () =&gt; <span class="cstat-no" title="statement not covered">resolve(this.collection))</span>;</span>
-<span class="cstat-no" title="statement not covered">                        break;</span>
+<span class="cstat-no" title="statement not covered" >                        this.once('connected', () =&gt; <span class="cstat-no" title="statement not covered" >resolve(this.collection))</span>;</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
                     case 'disconnected':
-<span class="cstat-no" title="statement not covered">                        reject(new Error('Not connected'));</span>
-<span class="cstat-no" title="statement not covered">                        break;</span>
+<span class="cstat-no" title="statement not covered" >                        reject(new Error('Not connected'));</span>
+<span class="cstat-no" title="statement not covered" >                        break;</span>
                     }
                 });
-<span class="cstat-no" title="statement not covered">                this.collectionReadyPromise = promise;</span>
+<span class="cstat-no" title="statement not covered" >                this.collectionReadyPromise = promise;</span>
             }
-<span class="cstat-no" title="statement not covered">            return promise;</span>
+<span class="cstat-no" title="statement not covered" >            return promise;</span>
         }
 &nbsp;
-        computeStorageId<span class="fstat-no" title="function not covered">(sessionId) {</span>
-<span class="cstat-no" title="statement not covered">            if (this.options.transformId &amp;&amp; typeof this.options.transformId === 'function') {</span>
-<span class="cstat-no" title="statement not covered">                return this.options.transformId(sessionId);</span>
+        computeStorageId<span class="fstat-no" title="function not covered" >(sessionId) {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.options.transformId &amp;&amp; typeof this.options.transformId === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >                return this.options.transformId(sessionId);</span>
             } else {
-<span class="cstat-no" title="statement not covered">                return sessionId;</span>
+<span class="cstat-no" title="statement not covered" >                return sessionId;</span>
             }
         }
 &nbsp;
         /* Public API */
 &nbsp;
-        get<span class="fstat-no" title="function not covered">(sid, callback) {</span>
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.findOneAsync({</span>
+        get<span class="fstat-no" title="function not covered" >(sid, callback) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.findOneAsync({</span>
                     _id: this.computeStorageId(sid),
                     $or: [
                         { expires: { $exists: false } },
@@ -1070,35 +1072,35 @@ module.exports = <span class="fstat-no" title="function not covered">function co
                     ],
                 }))
                 .then(session =&gt; {
-<span class="cstat-no" title="statement not covered">                    if (session) {</span>
-<span class="cstat-no" title="statement not covered">                        const s = this.transformFunctions.unserialize(session.session);</span>
-<span class="cstat-no" title="statement not covered">                        if (this.options.touchAfter &gt; 0 &amp;&amp; session.lastModified) {</span>
-<span class="cstat-no" title="statement not covered">                            s.lastModified = session.lastModified;</span>
+<span class="cstat-no" title="statement not covered" >                    if (session) {</span>
+<span class="cstat-no" title="statement not covered" >                        const s = this.transformFunctions.unserialize(session.session);</span>
+<span class="cstat-no" title="statement not covered" >                        if (this.options.touchAfter &gt; 0 &amp;&amp; session.lastModified) {</span>
+<span class="cstat-no" title="statement not covered" >                            s.lastModified = session.lastModified;</span>
                         }
-<span class="cstat-no" title="statement not covered">                        this.emit('touch', sid);</span>
-<span class="cstat-no" title="statement not covered">                        return s;</span>
+<span class="cstat-no" title="statement not covered" >                        this.emit('touch', sid);</span>
+<span class="cstat-no" title="statement not covered" >                        return s;</span>
                     }
                 })
                 .asCallback(callback);
         }
 &nbsp;
-        set<span class="fstat-no" title="function not covered">(sid, session, callback) {</span>
+        set<span class="fstat-no" title="function not covered" >(sid, session, callback) {</span>
 &nbsp;
             // removing the lastModified prop from the session object before update
-<span class="cstat-no" title="statement not covered">            if (this.options.touchAfter &gt; 0 &amp;&amp; session &amp;&amp; session.lastModified) {</span>
-<span class="cstat-no" title="statement not covered">                delete session.lastModified;</span>
+<span class="cstat-no" title="statement not covered" >            if (this.options.touchAfter &gt; 0 &amp;&amp; session &amp;&amp; session.lastModified) {</span>
+<span class="cstat-no" title="statement not covered" >                delete session.lastModified;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            let s;</span>
+<span class="cstat-no" title="statement not covered" >            let s;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            try {</span>
-<span class="cstat-no" title="statement not covered">                s = { _id: this.computeStorageId(sid), session: this.transformFunctions.serialize(session) };</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >                s = { _id: this.computeStorageId(sid), session: this.transformFunctions.serialize(session) };</span>
             } catch (err) {
-<span class="cstat-no" title="statement not covered">                return callback(err);</span>
+<span class="cstat-no" title="statement not covered" >                return callback(err);</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (session &amp;&amp; session.cookie &amp;&amp; session.cookie.expires) {</span>
-<span class="cstat-no" title="statement not covered">                s.expires = new Date(session.cookie.expires);</span>
+<span class="cstat-no" title="statement not covered" >            if (session &amp;&amp; session.cookie &amp;&amp; session.cookie.expires) {</span>
+<span class="cstat-no" title="statement not covered" >                s.expires = new Date(session.cookie.expires);</span>
             } else {
                 // If there's no expiration date specified, it is
                 // browser-session cookie or there is no cookie at all,
@@ -1107,29 +1109,29 @@ module.exports = <span class="fstat-no" title="function not covered">function co
                 // So we set the expiration to two-weeks from now
                 // - as is common practice in the industry (e.g Django) -
                 // or the default specified in the options.
-<span class="cstat-no" title="statement not covered">                s.expires = new Date(Date.now() + this.ttl * 1000);</span>
+<span class="cstat-no" title="statement not covered" >                s.expires = new Date(Date.now() + this.ttl * 1000);</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (this.options.touchAfter &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">                s.lastModified = new Date();</span>
+<span class="cstat-no" title="statement not covered" >            if (this.options.touchAfter &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                s.lastModified = new Date();</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.updateAsync({ _id: this.computeStorageId(sid) }, s, { upsert: true }))</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.updateAsync({ _id: this.computeStorageId(sid) }, s, { upsert: true }))</span>
                 .then(responseArray =&gt; {
-<span class="cstat-no" title="statement not covered">                    const rawResponse = responseArray.length === 2 ? responseArray[1] : responseArray[0].result;</span>
-<span class="cstat-no" title="statement not covered">                    if (rawResponse.upserted) {</span>
-<span class="cstat-no" title="statement not covered">                        this.emit('create', sid);</span>
+<span class="cstat-no" title="statement not covered" >                    const rawResponse = responseArray.length === 2 ? responseArray[1] : responseArray[0].result;</span>
+<span class="cstat-no" title="statement not covered" >                    if (rawResponse.upserted) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.emit('create', sid);</span>
                     } else {
-<span class="cstat-no" title="statement not covered">                        this.emit('update', sid);</span>
+<span class="cstat-no" title="statement not covered" >                        this.emit('update', sid);</span>
                     }
-<span class="cstat-no" title="statement not covered">                    this.emit('set', sid);</span>
+<span class="cstat-no" title="statement not covered" >                    this.emit('set', sid);</span>
                 })
                 .asCallback(callback);
         }
 &nbsp;
-        touch<span class="fstat-no" title="function not covered">(sid, session, callback) {</span>
-<span class="cstat-no" title="statement not covered">            const updateFields = {},</span>
+        touch<span class="fstat-no" title="function not covered" >(sid, session, callback) {</span>
+<span class="cstat-no" title="statement not covered" >            const updateFields = {},</span>
                 touchAfter = this.options.touchAfter * 1000,
                 lastModified = session.lastModified ? session.lastModified.getTime() : 0,
                 currentDate = new Date();
@@ -1137,71 +1139,70 @@ module.exports = <span class="fstat-no" title="function not covered">function co
             // if the given options has a touchAfter property, check if the
             // current timestamp - lastModified timestamp is bigger than
             // the specified, if it's not, don't touch the session
-<span class="cstat-no" title="statement not covered">            if (touchAfter &gt; 0 &amp;&amp; lastModified &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            if (touchAfter &gt; 0 &amp;&amp; lastModified &gt; 0) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                const timeElapsed = currentDate.getTime() - session.lastModified;</span>
+<span class="cstat-no" title="statement not covered" >                const timeElapsed = currentDate.getTime() - session.lastModified;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                if (timeElapsed &lt; touchAfter) {</span>
-<span class="cstat-no" title="statement not covered">                    return callback();</span>
+<span class="cstat-no" title="statement not covered" >                if (timeElapsed &lt; touchAfter) {</span>
+<span class="cstat-no" title="statement not covered" >                    return callback();</span>
                 } else {
-<span class="cstat-no" title="statement not covered">                    updateFields.lastModified = currentDate;</span>
+<span class="cstat-no" title="statement not covered" >                    updateFields.lastModified = currentDate;</span>
                 }
 &nbsp;
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (session &amp;&amp; session.cookie &amp;&amp; session.cookie.expires) {</span>
-<span class="cstat-no" title="statement not covered">                updateFields.expires = new Date(session.cookie.expires);</span>
+<span class="cstat-no" title="statement not covered" >            if (session &amp;&amp; session.cookie &amp;&amp; session.cookie.expires) {</span>
+<span class="cstat-no" title="statement not covered" >                updateFields.expires = new Date(session.cookie.expires);</span>
             } else {
-<span class="cstat-no" title="statement not covered">                updateFields.expires = new Date(Date.now() + this.ttl * 1000);</span>
+<span class="cstat-no" title="statement not covered" >                updateFields.expires = new Date(Date.now() + this.ttl * 1000);</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.updateAsync({ _id: this.computeStorageId(sid) }, { $set: updateFields }))</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.updateAsync({ _id: this.computeStorageId(sid) }, { $set: updateFields }))</span>
                 .then(result =&gt; {
-<span class="cstat-no" title="statement not covered">                    if (result.nModified === 0) {</span>
-<span class="cstat-no" title="statement not covered">                        throw new Error('Unable to find the session to touch');</span>
+<span class="cstat-no" title="statement not covered" >                    if (result.nModified === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        throw new Error('Unable to find the session to touch');</span>
                     } else {
-<span class="cstat-no" title="statement not covered">                        this.emit('touch', sid);</span>
+<span class="cstat-no" title="statement not covered" >                        this.emit('touch', sid);</span>
                     }
                 })
                 .asCallback(callback);
         }
 &nbsp;
-        destroy<span class="fstat-no" title="function not covered">(sid, callback) {</span>
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.removeAsync({ _id: this.computeStorageId(sid) }))</span>
-                .then(() =&gt; <span class="cstat-no" title="statement not covered">this.emit('destroy', sid))</span>
+        destroy<span class="fstat-no" title="function not covered" >(sid, callback) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.removeAsync({ _id: this.computeStorageId(sid) }))</span>
+                .then(() =&gt; <span class="cstat-no" title="statement not covered" >this.emit('destroy', sid))</span>
                 .asCallback(callback);
         }
 &nbsp;
-        length<span class="fstat-no" title="function not covered">(callback) {</span>
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.countAsync({}))</span>
+        length<span class="fstat-no" title="function not covered" >(callback) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.countAsync({}))</span>
                 .asCallback(callback);
         }
 &nbsp;
-        clear<span class="fstat-no" title="function not covered">(callback) {</span>
-<span class="cstat-no" title="statement not covered">            return this.collectionReady()</span>
-                .then(collection =&gt; <span class="cstat-no" title="statement not covered">collection.dropAsync())</span>
+        clear<span class="fstat-no" title="function not covered" >(callback) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.collectionReady()</span>
+                .then(collection =&gt; <span class="cstat-no" title="statement not covered" >collection.dropAsync())</span>
                 .asCallback(callback);
         }
 &nbsp;
-        close<span class="fstat-no" title="function not covered">() {</span>
-<span class="cstat-no" title="statement not covered">            if (this.db) {</span>
-<span class="cstat-no" title="statement not covered">                this.db.close();</span>
+        close<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >            if (this.db) {</span>
+<span class="cstat-no" title="statement not covered" >                this.db.close();</span>
             }
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return MongoStore;</span>
+<span class="cstat-no" title="statement not covered" >    return MongoStore;</span>
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 08:25:15 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 11:21:00 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>

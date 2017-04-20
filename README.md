@@ -1,4 +1,7 @@
-# test coverage for  [connect-mongo (v1.3.2)](https://github.com/kcbanner/connect-mongo#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-connect-mongo.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-mongo) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-mongo.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-mongo)
+# npmtest-connect-mongo
+
+#### basic test coverage for  [connect-mongo (v1.3.2)](https://github.com/kcbanner/connect-mongo#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-connect-mongo.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-mongo) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-mongo.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-mongo)
+
 #### MongoDB session store for Express and Connect
 
 [![NPM](https://nodei.co/npm/connect-mongo.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/connect-mongo)
